@@ -43,7 +43,7 @@ const Projects = () => {
         <p className='text-sm sm:text-base'><Text arrayTexts={text}/></p>
         <div className='flex flex-wrap items-center justify-center mb-8'>
           {projects.map((item, index) => (
-            <a onMouseEnter={() => setIndexProject(index)} onMouseLeave={() => setIndexProject(3)} target='_blank' href={item.link} className={`relative ${indexProject == index ? 'bg-black border-2 border-[#00ff00]' : 'bg-[#00ff00]  border-2 border-black'} w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] m-4 sm:m-8 flex flex-col justify-between`}>
+            <a key={index} onMouseEnter={() => setIndexProject(index)} onMouseLeave={() => setIndexProject(3)} target='_blank' href={item.link} className={`relative ${indexProject == index ? 'bg-black border-2 border-[#00ff00]' : 'bg-[#00ff00]  border-2 border-black'} w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] m-4 sm:m-8 flex flex-col justify-between`}>
               <p className={`${indexProject == index ? 'bg-[#00ff00] text-black' : 'bg-black text-[#00ff00]'} text-center p-2 text-sm sm:text-base`}>{item.name}</p>
               <Image className={`mx-auto ${index == 0 && 'p-8'}`} src={indexProject == index ? item.logo_light : item.logo} width={index == 0 ? 300 : 100} height={index == 0 ? 300 : 100} alt={item.name} title={item.name} />
               <p className={`${indexProject == index ? 'bg-[#00ff00] text-black' : 'bg-black text-[#00ff00]'} text-center p-2 text-sm sm:text-base`}><Text arrayTexts={item.description} /></p>
