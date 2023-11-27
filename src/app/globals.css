@@ -17,11 +17,18 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #00ff00;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  scrollbar-width: none;
+  overflow-x: none;
 }
+
+body::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari y otros navegadores webkit */
+}
+
