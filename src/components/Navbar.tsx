@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Cookies from 'js-cookie';
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from 'next-themes'
@@ -33,6 +33,12 @@ const Navbar = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   }
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className='fixed flex flex-col w-full z-20'>
       <div className='bg-[#00ff00] text-black dark:bg-black dark:text-[#00ff00] w-full h-[100px] flex flex-row items-center justify-between px-8 text-sm sm:text-base'>
@@ -44,7 +50,7 @@ const Navbar = () => {
           <button onClick={() => handlePressButtonNavbar('contact')} className='hover:underline mx-2'><Text arrayTexts={['contacto', 'contact', 'contact']} /></button>
         </div>
         <div className='flex flex-row items-center'>
-          <button onClick={() => handleSetTheme(theme == 'dark' ? 'light' : 'dark')} >{theme == 'dark' ? <FaSun /> : <FaMoon />}</button>
+          {isMounted && <button onClick={() => handleSetTheme(theme == 'dark' ? 'light' : 'dark')} >{theme == 'dark' ? <FaSun /> : <FaMoon />}</button>}
           <button className='hover:underline ml-4 text-xl sm:text-base' onClick={() => handleSetIndexLanguage((indexLanguage + 1) % 3)}>{languages[indexLanguage]}</button>
         </div>
       </div>
