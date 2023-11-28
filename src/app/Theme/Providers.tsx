@@ -5,7 +5,7 @@ import { MyContextProvider } from '@/components/MyContext';
 
 export function Providers({ children }: { children: React.ReactNode }) {
     return (
-        <ThemeProvider attribute="class" enableSystem={true} themes={['light', 'dark']}>
+        <ThemeProvider attribute="class" enableSystem={false} themes={['light', 'dark']}>
             <MyContextProvider>
                 {children}
             </MyContextProvider>

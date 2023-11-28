@@ -6,6 +6,10 @@ import { createContext, useState, ReactNode, Dispatch, SetStateAction } from 're
 interface MyContextType {
   indexLanguage: number;
   setIndexLanguage: Dispatch<SetStateAction<number>>;
+  showMenu: boolean;
+  setShowMenu: Dispatch<SetStateAction<boolean>>;
+  sectionId: string;
+  setSectionId: Dispatch<SetStateAction<string>>;
 }
 
 // Create a default value with the required shape
@@ -13,6 +17,14 @@ const defaultContextValue: MyContextType = {
   indexLanguage: 0,
   setIndexLanguage: () => {
     throw new Error('setIndexLanguage not overridden');
+  },
+  showMenu: false,
+  setShowMenu: () => {
+    throw new Error('setShowMenu not overridden');
+  },
+  sectionId: 'home',
+  setSectionId: () => {
+    throw new Error('setSectionId not overridden');
   },
 };
 
@@ -25,9 +37,11 @@ interface MyContextProviderProps {
 
 export const MyContextProvider = ({ children }: MyContextProviderProps) => {
   const [indexLanguage, setIndexLanguage] = useState<number>(0);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [sectionId, setSectionId] = useState<string>('home');
 
   return (
-    <MyContext.Provider value={{ indexLanguage, setIndexLanguage }}>
+    <MyContext.Provider value={{ indexLanguage, setIndexLanguage, showMenu, setShowMenu, sectionId, setSectionId }}>
       {children}
     </MyContext.Provider>
   );

@@ -3,7 +3,7 @@ import * as THREE from 'three';
 
 const BackgroundNumbers: React.FC<{theme: string | undefined}> = ({ theme }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+    
   useEffect(() => {
     if (canvasRef.current) {
 
@@ -96,18 +96,6 @@ const BackgroundNumbers: React.FC<{theme: string | undefined}> = ({ theme }) => 
   
       // Animate
       const clock = new THREE.Clock()
-  
-      let mouseX = 0
-      let mouseY = 0
-      
-      //Funciona muy brusco esto si lo meto en las rotaciones
-      const animateParticles = (event: MouseEvent) => {
-        mouseX = event.clientX - (window.innerWidth / 2)
-        mouseY = event.clientY - (window.innerHeight / 2)
-      }
-      
-      //Mouse
-      document.addEventListener('mousemove', animateParticles)
   
       const tick = () => {
   
