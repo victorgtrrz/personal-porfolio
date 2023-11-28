@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const BackgroundNumbers = () => {
+const BackgroundNumbers: React.FC<{theme: string | undefined}> = ({ theme }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
+  
   useEffect(() => {
     if (canvasRef.current) {
 
@@ -43,14 +43,14 @@ const BackgroundNumbers = () => {
         size: 0.005,
         map: zeros,
         transparent: true,
-        color: '#00ff00'
+        color: theme == 'dark' ? '#00ff00' : '#000000'
       })
 
       const particlesMaterial_ones = new THREE.PointsMaterial({
         size: 0.005,
         map: ones,
         transparent: true,
-        color: '#00ff00'
+        color: theme == 'dark' ? '#00ff00' : '#000000'
       })
   
       // Mesh
@@ -146,12 +146,11 @@ const BackgroundNumbers = () => {
       };
 
     }
-  }, []);
+  }, [theme]);
 
   return (
-    <div className="absolute three-background w-full h-[500vh]">
+    <div className={`absolute three-background w-full ${theme == 'dark' ? 'bg-black' : 'bg-[#00ff00]'}`}>
       <canvas ref={canvasRef} className="webgl"></canvas>
-      {/* Asegúrate de que el canvas tenga estilos para llenar el fondo */}
       <style jsx>{`
         .three-background {
           position: fixed; /* Cambiado de 'absolute' a 'fixed' */

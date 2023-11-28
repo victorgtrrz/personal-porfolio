@@ -42,14 +42,14 @@ const Stack = () => {
   ]
 
   return (
-    <div id='stack' className='relative w-full bg-transparent h-screen p-8 flex'>
+    <div id='stack' className='relative w-full text-black dark:text-[#00ff00] bg-transparent h-screen p-8 flex'>
       <div className='flex flex-row w-full h-screen sm:p-8 xl:p-32'>
         <div className='flex flex-col w-1/5 sm:w-1/3 xl:w-1/2 h-[80%] justify-around'>
-          <button onMouseEnter={() => handleSetIndex(0)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-[#00ff00] hover:text-black'>next.js</button>
-          <button onMouseEnter={() => handleSetIndex(1)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-[#00ff00] hover:text-black'>tailwindcss</button>
-          <button onMouseEnter={() => handleSetIndex(2)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-[#00ff00] hover:text-black'>sql/nosql</button>
-          <button onMouseEnter={() => handleSetIndex(3)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-[#00ff00] hover:text-black'>solidity</button>
-          <button onMouseEnter={() => handleSetIndex(4)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-[#00ff00] hover:text-black'>AI</button>
+          <button onTouchStart={() => handleSetIndex(0)} onMouseEnter={() => handleSetIndex(0)} onTouchEnd={() => !fixed && setIndex(5)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-black dark:hover:bg-[#00ff00] hover:text-[#00ff00] dark:hover:text-black'><p className='rotate-[-90deg] sm:rotate-0'>next.js</p></button>
+          <button onTouchStart={() => handleSetIndex(1)} onMouseEnter={() => handleSetIndex(1)} onTouchEnd={() => !fixed && setIndex(5)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-black dark:hover:bg-[#00ff00] hover:text-[#00ff00] dark:hover:text-black'><p className='rotate-[-90deg] sm:rotate-0'>tailwindcss</p></button>
+          <button onTouchStart={() => handleSetIndex(2)} onMouseEnter={() => handleSetIndex(2)} onTouchEnd={() => !fixed && setIndex(5)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-black dark:hover:bg-[#00ff00] hover:text-[#00ff00] dark:hover:text-black'><p className='rotate-[-90deg] sm:rotate-0'>sql/nosql</p></button>
+          <button onTouchStart={() => handleSetIndex(3)} onMouseEnter={() => handleSetIndex(3)} onTouchEnd={() => !fixed && setIndex(5)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-black dark:hover:bg-[#00ff00] hover:text-[#00ff00] dark:hover:text-black'><p className='rotate-[-90deg] sm:rotate-0'>solidity</p></button>
+          <button onTouchStart={() => handleSetIndex(4)} onMouseEnter={() => handleSetIndex(4)} onTouchEnd={() => !fixed && setIndex(5)} onMouseLeave={() => !fixed && setIndex(5)} onClick={() => setFixed(true)} className='w-full h-1/5 hover:bg-black dark:hover:bg-[#00ff00] hover:text-[#00ff00] dark:hover:text-black'><p className='rotate-[-90deg] sm:rotate-0'>AI</p></button>
         </div>
         <div className='w-4/5 sm:w-2/3 xl:w-1/2 h-[80%] px-8'>
           {index === 0 &&

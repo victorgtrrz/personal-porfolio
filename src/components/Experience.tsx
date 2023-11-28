@@ -22,17 +22,17 @@ const axpeDesc_2 = [
 const Experience = () => {
   return (
     <div id='experience' className='relative w-full bg-transparent h-screen p-4 xl:p-8 flex flex-col items-center justify-center'>
-      <div className='w-7/8 sm:w-4/5 p-2 sm:p-4 xl:p-8 bg-[#00ff00] text-black'> 
+      <div className='w-7/8 sm:w-4/5 p-2 sm:p-4 xl:p-8 bg-black dark:bg-[#00ff00] text-[#00ff00] dark:text-black'> 
         <p className='font-bold text-sm sm:text-base'><a target='_blank' href='https://lifegames.io' className='hover:underline'>life games</a> - full stack</p>
         <p className='text-sm sm:text-base'>july 2023 - today</p>
         <p className='mt-4 text-sm sm:text-base'><Text arrayTexts={lifeGamesDesc}/></p>
       </div>
-      <div className='w-7/8 sm:w-4/5 p-2 sm:p-4 xl:p-8 bg-[#00ff00] text-black mt-2'> 
+      <div className='w-7/8 sm:w-4/5 p-2 sm:p-4 xl:p-8 bg-black dark:bg-[#00ff00] text-[#00ff00] dark:text-black mt-2'> 
         <p className='font-bold text-sm sm:text-base'><a target='_blank' href='https://www.axpe.com/' className='hover:underline'>AXPE consulting</a> - junior programmer</p>
         <p className='text-sm sm:text-base'>may 2022 - may 2023</p>
         <p className='mt-4 text-sm sm:text-base'><Text arrayTexts={axpeDesc_1}/> <a target='_blank' href='https://aplicacionesweb.cantabria.es/betcan/' className='hover:underline'>BETCAN</a><Text arrayTexts={axpeDesc_2}/></p>
       </div>
-      <h2 className='absolute bottom-0 right-0 text-bold text-xl sm:text-2xl xl:text-4xl p-8'>my_personal_portfolio/<Text arrayTexts={['experiencia', 'experience', 'experience']}/></h2>
+      <h2 className='absolute bottom-0 right-0 text-bold text-xl text-black dark:text-[#00ff00] sm:text-2xl xl:text-4xl p-8'>my_personal_portfolio/<Text arrayTexts={['experiencia', 'experience', 'experience']}/></h2>
     </div>
   )
 }

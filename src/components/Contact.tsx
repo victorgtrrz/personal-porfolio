@@ -4,7 +4,7 @@ import { Text } from '.'
 
 const Contact = () => {
   return (
-    <div id='contact' className='relative w-full bg-transparent h-screen p-8 flex items-center justify-center'>
+    <div id='contact' className='relative w-full bg-transparent h-screen p-8 flex items-center justify-center text-black dark:text-[#00ff00]'>
       <div className='flex flex-col items-center z-10 text-sm sm:text-base'>
         <p className='font-bold'><Text arrayTexts={['conectemos!', 'let\'s connect!', 'connectons-nous !']}/></p>
         <p><Text arrayTexts={['puedes contactarme a través de mi', 'you can reach me trough my', 'vous pouvez me joindre via mon']}/> <a className='hover:underline' href='mailto:info@victorgutierrez.tech'>email</a></p>
@@ -16,7 +16,7 @@ const Contact = () => {
         </div>
       </div>
       <h2 className='absolute bottom-0 right-0 text-bold text-xl sm:text-2xl xl:text-4xl p-8 z-10'>my_personal_portfolio/<Text arrayTexts={['contacto', 'contact', 'contact']}/></h2>
-      <div className='absolute bg-gradient-to-b from-transparent to-black bottom-0 right-0 w-full h-[100px]'></div>
+      <div className='absolute bg-gradient-to-b from-transparent to-[#00ff00] dark:to-black bottom-0 right-0 w-full h-[100px]'></div>
     </div>
   )
 }
