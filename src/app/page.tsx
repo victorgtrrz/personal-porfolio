@@ -9,7 +9,7 @@ export default function Home() {
 
   const { theme } = useTheme()
 
-  const { showMenu, sectionId } = useContext(MyContext);
+  const { showMenu, sectionId, lastScrollY } = useContext(MyContext);
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -19,6 +19,8 @@ export default function Home() {
 
   useEffect(() => {
     if (showMenu) return
+    window.scrollTo({top: lastScrollY});
+    if (sectionId == '') return
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   }, [showMenu, sectionId])

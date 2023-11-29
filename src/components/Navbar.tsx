@@ -10,8 +10,7 @@ import { MyContext } from './MyContext'
 const Navbar = () => {
 
   const languages = ['es', 'en', 'fr']
-  const { indexLanguage, setIndexLanguage } = useContext(MyContext);
-  const { showMenu, setShowMenu } = useContext(MyContext);
+  const { indexLanguage, setIndexLanguage, setSectionId, setLastScrollY, showMenu, setShowMenu } = useContext(MyContext);
   const { theme, setTheme } = useTheme()
 
   const handleSetIndexLanguage = (i: number) => {
@@ -41,10 +40,19 @@ const Navbar = () => {
     setIsMounted(true);
   }, []);
 
+  const handleSetShowMenu = () => {
+    if (showMenu) {
+      setSectionId('')
+    } else {
+      setLastScrollY(window.scrollY)
+    }
+    setShowMenu(!showMenu)
+  }
+
   return (
     <div className='fixed flex flex-col w-full z-20'>
       <div className='bg-[#00ff00] text-black dark:bg-black dark:text-[#00ff00] w-full h-[100px] flex flex-row items-center justify-between px-8 text-sm sm:text-base'>
-        <button onClick={() => setShowMenu(!showMenu)} className='flex sm:hidden'>{showMenu ? <FaXmark size={20}/> : <FaBars className='ml-1'/>}</button>
+        <button onClick={() => handleSetShowMenu()} className='flex sm:hidden'>{showMenu ? <FaXmark size={20}/> : <FaBars className='ml-1'/>}</button>
         <div className='hidden sm:flex flex-row'>
           <button onClick={() => handlePressButtonNavbar('home')} className='hover:underline mr-2'><Text arrayTexts={['home', 'home', 'accueil']} /></button>
           <button onClick={() => handlePressButtonNavbar('stack')} className='hover:underline mx-2'>stack</button>

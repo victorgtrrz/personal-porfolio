@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div id='contact' className='relative w-full bg-transparent h-screen p-8 flex items-center justify-center text-black dark:text-[#00ff00]'>
       <div className='flex flex-col items-center z-10 text-sm sm:text-base'>
-        <p className='font-bold'><Text arrayTexts={['conectemos!', 'let\'s connect!', 'connectons-nous !']}/></p>
+        <p className='font-bold'><Text arrayTexts={['conectemos!', 'let\'s connect!', 'connectons-nous!']}/></p>
         <p><Text arrayTexts={['puedes contactarme a través de mi', 'you can reach me trough my', 'vous pouvez me joindre via mon']}/> <a className='hover:underline' href='mailto:info@victorgutierrez.tech'>email</a></p>
         <p><Text arrayTexts={['y también siguiéndome en las redes sociales', 'and also following me in the media', 'et aussi en me suivant sur les réseaux sociaux']}/></p>
         <div className='flex flex-row justify-center'>
