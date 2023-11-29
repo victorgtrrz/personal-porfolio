@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import Cookies from 'js-cookie';
-import { FaMoon, FaSun, FaBars} from "react-icons/fa";
+import { FaMoon, FaSun, FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { useTheme } from 'next-themes'
 
@@ -29,7 +29,7 @@ const Navbar = () => {
     setIndexLanguage(!isNaN(indexLanguage) ? indexLanguage : 0);
   }, [])
 
-  const handlePressButtonNavbar = (sectionId : string) => {
+  const handlePressButtonNavbar = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   }
@@ -50,24 +50,25 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed flex flex-col w-full z-20'>
-      <div className='bg-[#00ff00] text-black dark:bg-black dark:text-[#00ff00] w-full h-[100px] flex flex-row items-center justify-between px-8 text-sm sm:text-base'>
-        <button onClick={() => handleSetShowMenu()} className='flex sm:hidden'>{showMenu ? <FaXmark size={20}/> : <FaBars className='ml-1'/>}</button>
-        <div className='hidden sm:flex flex-row'>
-          <button onClick={() => handlePressButtonNavbar('home')} className='hover:underline mr-2'><Text arrayTexts={['home', 'home', 'accueil']} /></button>
-          <button onClick={() => handlePressButtonNavbar('stack')} className='hover:underline mx-2'>stack</button>
-          <button onClick={() => handlePressButtonNavbar('experience')} className='hover:underline mx-2'><Text arrayTexts={['experiencia', 'experience', 'expérience']} /></button>
-          <button onClick={() => handlePressButtonNavbar('projects')} className='hover:underline mx-2'><Text arrayTexts={['proyectos', 'proyects', 'projets']} /></button>
-          <button onClick={() => handlePressButtonNavbar('contact')} className='hover:underline mx-2'><Text arrayTexts={['contacto', 'contact', 'contact']} /></button>
-        </div>
-        <div className='flex flex-row items-center'>
-          {isMounted && <button onClick={() => handleSetTheme(theme == 'dark' ? 'light' : 'dark')} >{theme == 'dark' ? <FaSun /> : <FaMoon />}</button>}
-          <button className='hover:underline ml-4 text-xl sm:text-base' onClick={() => handleSetIndexLanguage((indexLanguage + 1) % 3)}>{languages[indexLanguage]}</button>
+    <>
+      <div className='fixed flex flex-col w-full z-30'>
+        <div className='bg-[#00ff00] text-black dark:bg-black dark:text-[#00ff00] w-full h-[100px] flex flex-row items-center justify-between px-8 text-sm sm:text-base'>
+          <button onClick={() => handleSetShowMenu()} className='flex sm:hidden'>{showMenu ? <FaXmark size={20} /> : <FaBars className='ml-1' />}</button>
+          <div className='hidden sm:flex flex-row'>
+            <button onClick={() => handlePressButtonNavbar('home')} className='hover:underline mr-2'><Text arrayTexts={['home', 'home', 'accueil']} /></button>
+            <button onClick={() => handlePressButtonNavbar('stack')} className='hover:underline mx-2'>stack</button>
+            <button onClick={() => handlePressButtonNavbar('experience')} className='hover:underline mx-2'><Text arrayTexts={['experiencia', 'experience', 'expérience']} /></button>
+            <button onClick={() => handlePressButtonNavbar('projects')} className='hover:underline mx-2'><Text arrayTexts={['proyectos', 'proyects', 'projets']} /></button>
+            <button onClick={() => handlePressButtonNavbar('contact')} className='hover:underline mx-2'><Text arrayTexts={['contacto', 'contact', 'contact']} /></button>
+          </div>
+          <div className='flex flex-row items-center'>
+            {isMounted && <button onClick={() => handleSetTheme(theme == 'dark' ? 'light' : 'dark')} >{theme == 'dark' ? <FaSun /> : <FaMoon />}</button>}
+            <button className='hover:underline ml-4 text-xl sm:text-base' onClick={() => handleSetIndexLanguage((indexLanguage + 1) % 3)}>{languages[indexLanguage]}</button>
+          </div>
         </div>
       </div>
-      <div className='bg-gradient-to-b from-[#00ff00] dark:from-black to-transparent w-full h-[100px]'>
-      </div>
-    </div>
+      <div className='fixed mt-[100px] bg-gradient-to-b from-[#00ff00] dark:from-black to-transparent w-full h-[100px]'></div>
+    </>
   )
 }
 
