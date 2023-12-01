@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Type git clone https://github.com/victorgtrrz/personal-porfolio.git in a terminal, inside the directory you want this project to be hosted.
+
 First, install all the dependencies:
 
 ```bash
