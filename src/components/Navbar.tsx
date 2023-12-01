@@ -9,7 +9,9 @@ import { MyContext } from './MyContext'
 
 const Navbar = () => {
 
+  // feel free to add or quit languages, but modify the <Text /> component accordingly
   const languages = ['es', 'en', 'fr']
+  
   const { indexLanguage, setIndexLanguage, setSectionId, setLastScrollY, showMenu, setShowMenu } = useContext(MyContext);
   const { theme, setTheme } = useTheme()
 
@@ -63,7 +65,7 @@ const Navbar = () => {
           </div>
           <div className='flex flex-row items-center'>
             {isMounted && <button onClick={() => handleSetTheme(theme == 'dark' ? 'light' : 'dark')} >{theme == 'dark' ? <FaSun /> : <FaMoon />}</button>}
-            <button className='hover:underline ml-4 text-xl sm:text-base' onClick={() => handleSetIndexLanguage((indexLanguage + 1) % 3)}>{languages[indexLanguage]}</button>
+            <button className='hover:underline ml-4 text-xl sm:text-base' onClick={() => handleSetIndexLanguage((indexLanguage + 1) % languages.length)}>{languages[indexLanguage]}</button>
           </div>
         </div>
       </div>
