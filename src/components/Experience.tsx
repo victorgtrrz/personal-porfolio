@@ -1,6 +1,8 @@
 import React from 'react'
 import { Text } from '.'
 
+
+
 const lifeGamesDesc = [
   'desarrollo tanto del front end (interfaz de usuario) como del back-end (bases de datos, conexiones blockchain y unreal engine) de la aplicación web Life Games, una plataforma de videojuegos donde los usuarios pueden apostar entre sí utilizando el token nativo, LFGM',
   'development of both the front-end (user interface) and back-end (databases, blockchain and unreal engine connections) of the Life Games web application, a platform of video games where users can bet against each other using the native token, LFGM',
