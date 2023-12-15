@@ -45,10 +45,14 @@ const Projects = () => {
       <div className='w-[80%] flex flex-col'>
         <div className='flex flex-wrap items-center justify-center mb-8'>
           {projects.map((item, index) => (
-            <a key={index} onTouchStart={() => setIndexProject(index)} onMouseEnter={() => setIndexProject(index)} onTouchEnd={() => setIndexProject(projects.length)} onMouseLeave={() => setIndexProject(projects.length)} target='_blank' href={item.link} className={`relative border-2 ${indexProject == index ? 'bg-[#00ff00] dark:bg-black border-black dark:border-[#00ff00]' : 'bg-black dark:bg-[#00ff00] border-[#00ff00] dark:border-black'} w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] m-4 sm:m-8 flex flex-col justify-between`}>
-              <p className={`${indexProject == index ? 'bg-black dark:bg-[#00ff00] text-[#00ff00] dark:text-black' : 'bg-[#00ff00] dark:bg-black text-black dark:text-[#00ff00]'} text-center p-2 text-sm sm:text-base`}>{item.name}</p>
-              {isMounted && <Image className={`mx-auto`} src={indexProject == index ? (theme == 'dark' ? item.logo_light : item.logo) : (theme == 'dark' ? item.logo : item.logo_light)} width={200} height={200} alt={item.name} title={item.name} />}
-              <p className={`${indexProject == index ? 'bg-black dark:bg-[#00ff00] text-[#00ff00] dark:text-black' : 'bg-[#00ff00] dark:bg-black text-black dark:text-[#00ff00]'} text-center p-2 text-sm sm:text-base`}><Text arrayTexts={item.description} /></p>
+            <a key={index} onTouchStart={() => setIndexProject(index)} onMouseEnter={() => setIndexProject(index)} onTouchEnd={() => setIndexProject(projects.length)} onMouseLeave={() => setIndexProject(projects.length)} target='_blank' href={item.link} className={`relative ${indexProject == index ? 'border-2 border-black dark:border-[#00ff00]' : 'border-[#00ff00]'} w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] m-4 sm:m-8 flex flex-col justify-between`}>
+              <p className={`${indexProject == index ? 'bg-black dark:bg-[#00ff00] text-[#00ff00] dark:text-black' : 'bg-transparent text-black dark:text-[#00ff00]'} text-center p-2 text-sm sm:text-base`}>{item.name}</p>
+              {isMounted && 
+              <div className={`${indexProject != index && 'bg-black dark:bg-[#00ff00]'} h-full flex items-center`}>
+                <Image className={`mx-auto`} src={indexProject == index ? (theme == 'dark' ? item.logo_light : item.logo) : (theme == 'dark' ? item.logo : item.logo_light)} width={200} height={200} alt={item.name} title={item.name} />
+              </div>
+              }
+              <p className={`${indexProject == index ? 'bg-black dark:bg-[#00ff00] text-[#00ff00] dark:text-black' : 'bg-transparent text-black dark:text-[#00ff00]'} text-center p-2 text-sm sm:text-base`}><Text arrayTexts={item.description} /></p>
             </a>
           ))}
         </div>

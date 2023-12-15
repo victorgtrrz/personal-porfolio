@@ -37,9 +37,6 @@ export default function Home() {
           <Experience />
           <Projects />
           <Contact />
-          <div className='bg-gradient-to-b from-transparent to-[#00ff00] dark:to-black bottom-0 right-0 w-full h-[100px] z-30 flex'>
-            <p className='m-auto text-xs'>powered by <a target="_blank" className='hover:underline' href='https://thedigitaljungle.io'>the digital jungle</a></p>
-          </div>
         </>
       )}
     </main>
